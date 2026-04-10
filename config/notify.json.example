@@ -1,0 +1,16 @@
+{
+    "_comment": "mei-guard notification configuration. Remove this field in your actual file.",
+
+    "syslog": true,
+
+    "webhook_url": "https://your-server.com/api/alerts",
+
+    "email": {
+        "from": "mei-guard@localhost",
+        "to": "admin@example.com",
+        "host": "localhost",
+        "port": 25
+    },
+
+    "exec": "/usr/local/bin/my-alert-script.sh"
+}

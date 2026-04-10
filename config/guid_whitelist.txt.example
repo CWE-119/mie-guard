@@ -1,0 +1,25 @@
+# mei-guard GUID whitelist
+# Format: <GUID without braces> <name> [requires_amt]
+# Lines starting with # are comments and ignored.
+
+# MKHI (ME Kernel Host Interface) – heartbeats and power management
+8E6A6301-731F-4543-ADEA-3D2BDBD2DA3A MKHI
+
+# Watchdog timer keep‑alive
+05B79A6C-F8F1-11E0-97A1-000000000000 HECI_WDT
+
+# MEI Client Device (generic)
+E2D1FF34-3458-49A9-88DA-8E6915CE9BE5 MEI_CLDEV
+
+# Thermal / FIVR management
+FC9C9903-F6A1-4500-96FE-0A7AA7F8AC9B THERMAL_MGMT
+
+# AMT Host Interface – ONLY active when AMT is provisioned in BIOS
+# The "requires_amt" flag tells mei-guard to suppress alerts for this
+# GUID if AMT is NOT provisioned. Without this flag, the GUID appearing
+# on a non‑AMT system would trigger a HIGH alert.
+12F80228-9A45-4540-A79E-234F965BC366 AMT_HOST requires_amt
+
+# You can add additional GUIDs from Intel public specs or your own
+# research. Example format:
+# 12345678-1234-1234-1234-123456789ABC MY_CUSTOM_CLIENT

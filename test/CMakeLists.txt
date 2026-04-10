@@ -1,0 +1,6 @@
+add_executable(test_core test_core.c)
+target_include_directories(test_core PRIVATE ${CMAKE_SOURCE_DIR}/src)
+if (UNIX)
+    target_link_libraries(test_core m)
+endif()
+add_test(NAME core COMMAND test_core)
